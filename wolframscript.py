@@ -9,7 +9,8 @@ count=0
 session=WolframLanguageSession('/cygdrive/c/Users/School/Downloads/Mathematica/WolframKernel.exe')
 session.start()
 session.evaluate(wlexpr('Unprotect[Out];'))
-print('\nWolfram Language 12.2.0 Engine for Microsoft Windows (64-bit)\n Copyright 1988-2021 Wolfram Research, Inc.\n')
+print('\n Wolfram Language 12.2.0 Engine for Microsoft Windows (64-bit)\n Copyright 1988-2021 Wolfram Research, Inc.\n')
+
 try:
     while True:
         expr=input('In['+str(count)+']:= ')
@@ -18,11 +19,11 @@ try:
         
         session.evaluate(wlexpr(f'$Line={count};'))
         
-        result=session.evaluate(wlexpr('ToString['+expr+',InputForm]'))
+        result=session.evaluate(wlexpr('FullSimplify[ToString['+expr+',InputForm]]'))
         
         session.evaluate(wlexpr(f'Out[{count}]={result};'))
         
-        print(f'Out[{count}]={result}\n')
+        print(f'Out[{count}]= {result}\n')
         
         count+=1
 except KeyboardInterrupt:
