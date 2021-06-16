@@ -1,4 +1,4 @@
-# Pywolfram
+# Wolframpy
 A simple REPL wrapper around Wolfram Mathematica, written in Python
 
 ## How to use
